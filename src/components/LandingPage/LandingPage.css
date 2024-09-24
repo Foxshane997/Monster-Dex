@@ -1,5 +1,3 @@
-/* src/components/LandingPage.css */
-
 .landing-container {
     display: flex;
     height: 100vh;
@@ -13,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007bff; /* Default background color */
+    background-color: #007bff;
     color: white; 
     flex-direction: column;
     position: relative; 
@@ -21,11 +19,11 @@
 }
 
 .left-panel {
-    background-color: #FF6F61; /* Pastel Red */
+    background-color: #FF6F61;
 }
 
 .right-panel {
-    background-color: #FFFAF0; /* Pastel Light Peach */
+    background-color: #FFFAF0;
 }
 
 .content {
@@ -40,24 +38,22 @@
     padding: 10px 20px;
     font-size: 20px;
     background-color: white;
-    color: #007bff; /* Initial text color for button */
+    color: #007bff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Add transition for scaling */
+    transition: transform 0.3s ease;
     margin-top: 20px;
-    position: relative; /* To position text-shadow accurately */
-    display: inline-block; /* Allow shadow to appear around the text */
+    position: relative;
+    display: inline-block;
 }
 
-/* Solid outline effect with single color change */
 .enter-button:hover {
     transform: scale(1.1);
-    color: #FFB3BA; /* Change this to your desired hover color (Pastel Pink) */
-    text-shadow: 0 0 0 #FF6F61; /* Outline effect in a different color (Pastel Red) */
+    color: #FFB3BA;
+    text-shadow: 0 0 0 #FF6F61;
 }
 
-/* Animation class to split */
 .landing-container.active .left-panel {
     transform: translateX(-100%);
 }
