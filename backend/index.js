@@ -1,18 +1,19 @@
 const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
+const connectDB = require('./db');
+const favoritesRoutes = require('./routes/favorites');
 const app = express();
 
-dotenv.config();
-app.use(cors());
+require('dotenv').config();
+
+// Connect to MongoDB
+connectDB();
+
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+// Use favorites routes
+app.use('/favorites', favoritesRoutes);
 
-app.get('/', (req, res) => {
-    res.send('Backend is running!');
-});
-
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
