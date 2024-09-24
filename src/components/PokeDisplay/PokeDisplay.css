@@ -1,0 +1,29 @@
+.pokemon-info {
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 40vw; 
+    height: auto;
+    font-weight: 500;
+}
+
+.pokemon-info img {
+    width: 350px;
+    height: auto;
+}
+
+.error {
+    color: red;
+}
+
+h2 {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+#description-p-tag {
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
