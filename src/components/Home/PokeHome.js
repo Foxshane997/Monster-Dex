@@ -16,7 +16,7 @@ const PokeHome = () => {
 
     return (
         <div className="home-container">
-            <h1 className="home-title">Welcome to the Pokémon World!</h1>
+            <h1 className="home-title">Welcome to Monster Dex!</h1>
             <div className="pokemon-grid">
                 {pokemonData.map((pokemon, index) => (
                     <Link to={`/pokemon/${pokemon.name.toLowerCase()}`} key={index} className="pokemon-card">

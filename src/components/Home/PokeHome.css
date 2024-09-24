@@ -4,11 +4,12 @@
     align-items: center;
     padding: 20px;
     background-color: #F7F7F7;
+    height: 100vh;
 }
 
 .home-title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .pokemon-grid {
