@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007bff;
+    background-color: #007bff; /* Default color, can change per panel */
     color: white; 
     flex-direction: column;
     position: relative; 
@@ -19,11 +19,16 @@
 }
 
 .left-panel {
-    background-color: #FF6F61;
+    background-color: #FF6F61; /* Left panel color */
 }
 
 .right-panel {
-    background-color: #FFFAF0;
+    background-color: #FFFAF0; /* Right panel color */
+    padding: 20px; /* Add padding for user info */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack user info vertically */
+    justify-content: center; /* Center user info */
+    align-items: center; /* Center align items */
 }
 
 .content {
@@ -60,4 +65,19 @@
 
 .landing-container.active .right-panel {
     transform: translateX(100%);
+}
+
+/* User Info Styles */
+.user-info {
+    text-align: center; /* Center align user info */
+    color: #333; /* Darker text color for readability */
+    margin-top: 20px; /* Space above user info */
+}
+
+.user-info h2 {
+    margin: 0; /* Remove margin for headings */
+}
+
+.user-info p {
+    margin: 5px 0; /* Space between user info paragraphs */
 }
