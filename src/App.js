@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Navbar from '../src/components/NavBar/NavBar';
+
 import PokemonSearch from '../src/components/PokemonSearch/PokemonSearch';
 import PokeHome from '../src/components/Home/PokeHome';
 import LandingPage from '../src/components/LandingPage/LandingPage';
-import PokeDisplay from './components/PokeDisplay/PokeDisplay';
+import PokeDisplay from '../src/components/PokeDisplay/PokeDisplay';
 
-const App = () => {
+const AppContent = () => {
     const [isEntered, setIsEntered] = useState(false);
+    const navigate = useNavigate();
 
     const handleEnter = () => {
         setIsEntered(true);
+        navigate('/');
     };
 
     return (
-        <Router>
+        <>
             {!isEntered ? (
                 <LandingPage onEnter={handleEnter} />
             ) : (
@@ -24,11 +26,18 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<PokeHome />} />
                         <Route path="/search" element={<PokemonSearch />} />
-                        <Route path="/pokemon/:name" element={<PokeDisplay />} /> 
-                        {/* <Route path="/user" element={<User />} /> */}
+                        <Route path="/pokemon/:name" element={<PokeDisplay />} />
                     </Routes>
                 </>
             )}
+        </>
+    );
+};
+
+const App = () => {
+    return (
+        <Router>
+            <AppContent />
         </Router>
     );
 };
