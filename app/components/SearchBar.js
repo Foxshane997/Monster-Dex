@@ -1,13 +1,12 @@
-// components/SearchBar.js
 import { useState } from 'react';
 
 export default function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
 
   const handleSearch = (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault();
     onSearch(query);
-    setQuery(''); // Clear the input after searching
+    setQuery('');
   };
 
   return (
