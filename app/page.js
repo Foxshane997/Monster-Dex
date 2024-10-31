@@ -2,6 +2,7 @@
 
 import Search from "./components/Search";
 import PokemonCards from "./components/PokemonCards";
+import HeroComponent from "./components/HeroComponent"; // Import HeroComponent
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -87,6 +88,7 @@ function HomePage() {
     <div className="text-center">
       <h1 className="text-3xl font-bold mb-4">Monster Dex</h1>
       <Search />
+      <HeroComponent pokemonName="rayquaza" />
       <div className="border-t border-gray-300 my-6"></div>
       <PokemonCards pokemonList={pokemonList} />
     </div>
