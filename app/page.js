@@ -13,10 +13,22 @@ function HomePage() {
       console.log("Fetching Pokémon data...");
       try {
         const pokemonNames = [
-          'pikachu', 'bulbasaur', 'charmander', 'squirtle',
-          'eevee', 'jigglypuff', 'meowth', 'snorlax',
-          'gengar', 'mewtwo', 'mew', 'raichu',
-          'lapras', 'dragonite', 'articuno', 'zapdos'
+          "pikachu",
+          "bulbasaur",
+          "charmander",
+          "squirtle",
+          "eevee",
+          "jigglypuff",
+          "meowth",
+          "snorlax",
+          "gengar",
+          "mewtwo",
+          "mew",
+          "raichu",
+          "lapras",
+          "dragonite",
+          "articuno",
+          "zapdos",
         ];
         const promises = pokemonNames.map(async (name) => {
           const response = await axios.get(
@@ -68,14 +80,14 @@ function HomePage() {
   };
 
   useEffect(() => {
-    console.log("HomePage component rendered"); // Debugging line
+    console.log("HomePage component rendered");
   }, []);
 
   return (
-    <div>
+    <div className="text-center">
       <h1 className="text-3xl font-bold mb-4">Monster Dex</h1>
       <Search />
-      <h2 className="text-2xl font-bold mt-6">Pokémon Cards</h2>
+      <div className="border-t border-gray-300 my-6"></div>
       <PokemonCards pokemonList={pokemonList} />
     </div>
   );

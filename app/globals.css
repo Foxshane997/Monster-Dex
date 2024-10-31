@@ -20,26 +20,35 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* styles/globals.css or styles/PokemonCards.module.css */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Adjust to scroll half of the total width */
+    transform: translateX(-50%);
   }
 }
 
 .scroll-container {
   display: flex;
-  overflow: hidden; /* Hide any overflow */
-  white-space: nowrap; /* Prevent line breaks */
-  animation: scroll-left 60s linear infinite; /* Slow down the animation */
-  width: 200%; /* Make the width twice to accommodate two sets of cards */
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 300px;
 }
 
 .pokemon-card {
-  flex: 0 0 auto; /* Prevent flex items from shrinking */
-  width: 250px; /* Set the width for the cards */
-  margin-right: 20px; /* Space between cards */
+  flex: 0 0 auto;
+  width: 200px;
+  height: 250px;
+  margin-right: 20px;
+}
+
+.pokemon-card img {
+  max-height: 120px;
+  width: auto;
+}
+
+.pokemon-card:not(:last-child) {
+  margin-right: 20px;
 }
