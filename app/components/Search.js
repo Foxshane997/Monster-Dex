@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-const Search = () => {
+const Search = ({ onSearch }) => {
   const [pokemonData, setPokemonData] = useState(null);
   const { register, handleSubmit } = useForm();
 
@@ -23,6 +23,7 @@ const Search = () => {
       };
 
       setPokemonData(filteredData);
+      onSearch(data.pokemonName.toLowerCase()); 
     } catch (error) {
       console.error("Error fetching Pokémon data:", error);
       alert("Pokémon not found. Please try again.");

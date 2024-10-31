@@ -2,12 +2,13 @@
 
 import Search from "./components/Search";
 import PokemonCards from "./components/PokemonCards";
-import HeroComponent from "./components/HeroComponent"; // Import HeroComponent
+import HeroComponent from "./components/HeroComponent";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 function HomePage() {
   const [pokemonList, setPokemonList] = useState([]);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
 
   useEffect(() => {
     const fetchPokemons = async () => {
@@ -80,15 +81,15 @@ function HomePage() {
       : "No description available.";
   };
 
-  useEffect(() => {
-    console.log("HomePage component rendered");
-  }, []);
+  const handleSearch = () => {
+    setIsHeroVisible(false);
+  };
 
   return (
     <div className="text-center">
       <h1 className="text-3xl font-bold mb-4">Monster Dex</h1>
-      <Search />
-      <HeroComponent pokemonName="rayquaza" />
+      <Search onSearch={handleSearch} />
+      {isHeroVisible && <HeroComponent pokemonName="rayquaza" />}
       <div className="border-t border-gray-300 my-6"></div>
       <PokemonCards pokemonList={pokemonList} />
     </div>
